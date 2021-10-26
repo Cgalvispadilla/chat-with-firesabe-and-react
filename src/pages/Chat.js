@@ -91,9 +91,10 @@ export default class Chat extends Component {
               <p
                 key={chat.timestamp}
                 className={
-                  "chat-bubble " +
+      
                   (this.state.user.uid === chat.uid ? "current-user" : "")
                 }
+                style={{marginTop:"3.4rem"}}
               >
                 {chat.content}
                 <br />
@@ -103,12 +104,13 @@ export default class Chat extends Component {
               </p>
             );
           })}
-          <form className="mx-3" onSubmit={this.handleSubmit}>
+          <form className="mx-3 " style={{paddingTop:"90px"}} onSubmit={this.handleSubmit}>
             <textarea
               className="form-control"
               name="content"
               onChange={this.handleChange}
               value={this.state.content}
+
             ></textarea>
             {this.state.error ? <p>{this.state.error}</p> : null}
             <button className="btn btn-dark px-5 mt-4" type="submit">
